@@ -1,0 +1,23 @@
+/* box-sizing sets how the total width and height of an element is calculated
+border-box tells the browser to account for any border and padding in the values you specify for an element's width and height.*/
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+.game-container {
+  position: relative;
+  width: 352px;
+  height: 198px;
+  margin: 0 auto;
+  margin-top: 20px;
+  outline: 1px solid white;
+}
