@@ -18,18 +18,21 @@ class Overworld {
     const y = 0;
     const hero = new Image();
     hero.onload = () => {
-    this.ctx.drawImage(
-      hero,
-      0,
-      0,
-      32,
-      32,
-      x,
-      y
+      this.ctx.drawImage(
+        hero,
+        0, // left cut
+        0, // top cut
+        32, // width of cut
+        32, //height of cut
+        x,
+        y,
+        32,
+        32
       )
     }
-    hero.src = "./images/characters/people/hero.png"
+    hero.src = "./images/characters/people/hero.png";
 
 
   }
-}
+
+ }
