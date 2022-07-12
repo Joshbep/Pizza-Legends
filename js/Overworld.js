@@ -14,8 +14,8 @@ class Overworld {
     };
     image.src = "./images/maps/DemoLower.png";
 
-    const x = 0;
-    const y = 0;
+    const x = 5; // x and y is where hero pops on map, with x and y axis
+    const y = 6;
     const hero = new Image();
     hero.onload = () => {
       this.ctx.drawImage(
@@ -24,9 +24,9 @@ class Overworld {
         0, // top cut
         32, // width of cut
         32, //height of cut
-        x,
-        y,
-        32,
+        x * 16 - 8, // character is 32x32, but map is 16x 16 blocks. this compensates for the grid itself
+        y * 16 - 18, // subtracting is to try to get him into the 16x16 block itself. used measuring tool to see how many pixels to subtract by on axis
+        32, //this basically says to draw it the same size as crop, tried making bigger, but looks super pixelated
         32
       )
     }
