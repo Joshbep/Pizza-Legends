@@ -18,42 +18,20 @@ class Overworld {
     };
     image.src = "./images/maps/DemoLower.png";
 
-    const x = 5; // x and y is where hero pops on map, with x and y axis
-    const y = 6;
-
-    const shadow = new Image();
-    shadow.onload = () => {
-      this.ctx.drawImage(
-        shadow,
-        0,
-        0,
-        32,
-        32,
-        x * 16 -8,
-        y * 16 - 18,
-        32,
-        32
-      )
-    }
-    shadow.src="./images/characters/shadow.png";
-
-    const hero = new Image();
-    hero.onload = () => {
-      this.ctx.drawImage(
-        hero,
-        0, // left cut
-        0, // top cut
-        32, // width of cut
-        32, //height of cut
-        x * 16 - 8, // character is 32x32, but map is 16x 16 blocks. this compensates for the grid itself
-        y * 16 - 18, // subtracting is to try to get him into the 16x16 block itself. used measuring tool to see how many pixels to subtract by on axis
-        32, //this basically says to draw it the same size as crop, tried making bigger, but looks super pixelated
-        32
-      )
-    }
-    hero.src = "./images/characters/people/hero.png";
-
-
+    //Place some Game Objects
+    const hero = new GameObject({
+      x: 5,
+      y: 6,
+    })
+    const npc1 = new GameObject({
+      x: 7,
+      y: 9,
+      src: './images/characters/people/erio.png'
+    })
+    setTimeout(() => {
+      hero.sprite.draw(this.ctx);
+      npc1.sprite.draw(this.ctx);
+    }, 200)
   }
 
  }
